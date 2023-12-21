@@ -1,16 +1,10 @@
-import { VIOLET } from '@/styles/ColorStyles';
-import { FONT_20_B } from '@/styles/FontStyles';
 import styled from 'styled-components';
+import Layout from '@/components/pages/home/Layout';
 
 export default function Home() {
   return (
-    <>
-      <Div>폰트, 색상변수 사용방법</Div>
-    </>
+    <Layout>
+      <div>홈페이지</div>
+    </Layout>
   );
 }
-
-const Div = styled.div`
-  color: ${VIOLET[1]};
-  ${FONT_20_B}
-`;

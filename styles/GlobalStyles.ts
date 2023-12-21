@@ -8,10 +8,13 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
-  * {
-    box-sizing: border-box;
+  html {
     font-family: "Pretendard";
     font-size: 62.5%;
+  }
+
+  body {
+    box-sizing: border-box;
   }
 
   html, body, div, span, h1, h2, h3, h4, h5, h6, p, 

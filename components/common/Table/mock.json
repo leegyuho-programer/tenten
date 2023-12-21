@@ -1,0 +1,53 @@
+{
+  "cursorId": 123,
+  "invitations": [
+    {
+      "id": 1,
+      "inviterUserId": 2,
+      "teamId": "team-10",
+      "dashboard": {
+        "title": "프로덕트 디자인",
+        "id": 234
+      },
+      "invitee": {
+        "nickname": "손동희",
+        "id": 2
+      },
+      "inviteAccepted": true,
+      "createdAt": "2023-12-20T04:38:51.003Z",
+      "updatedAt": "2023-12-20T04:38:51.003Z"
+    },
+    {
+      "id": 2,
+      "inviterUserId": 3,
+      "teamId": "team-8",
+      "dashboard": {
+        "title": "새로운 기획 문서",
+        "id": 234
+      },
+      "invitee": {
+        "nickname": "안귀영",
+        "id": 3
+      },
+      "inviteAccepted": true,
+      "createdAt": "2023-12-20T04:38:51.003Z",
+      "updatedAt": "2023-12-20T04:38:51.003Z"
+    },
+    {
+      "id": 2,
+      "inviterUserId": 3,
+      "teamId": "team-8",
+      "dashboard": {
+        "title": "유닛A",
+        "id": 234
+      },
+      "invitee": {
+        "nickname": "장혁",
+        "id": 3
+      },
+      "inviteAccepted": true,
+      "createdAt": "2023-12-20T04:38:51.003Z",
+      "updatedAt": "2023-12-20T04:38:51.003Z"
+    }
+  ]
+}
