@@ -1,40 +1,249 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🗓️ TaskyTasky by TenTen
 
-## Getting Started
+스마트하게 나의 일정을 관리해보세요, TaskyTasky와 함께!
 
-First, run the development server:
+🌍 배포 링크: https://taskytasky.netlify.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> 개발 기간: 2023. 12. 18 ~ 2024. 1. 5 <br/>
+> 팀: TENTEN (코드잇 스프린트-프론트엔드 1기 PART3-10팀)
+
+## 👨‍👩‍👧‍👧 팀원 소개
+
+<table>
+  <tbody>
+    <tr>
+    <td align="center"><a href="https://github.com/naya-h2">
+      <img width=200px src="https://avatars.githubusercontent.com/u/103186362?v=4" alt=""/><br />
+      <sub><b>[FE] 안희원</b></sub></a>👑<br /></td>
+      <td align="center"><a href="https://github.com/Ssong-Q">
+      <img width=200px src="https://avatars.githubusercontent.com/u/122101706?v=4" alt=""/><br />
+      <sub><b>[FE] 송규경</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/Eugene-A-01">
+      <img width=200px src="https://avatars.githubusercontent.com/u/70089733?v=4" alt=""/><br />
+      <sub><b>[FE] 안유진</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/leegyuho-programer">
+      <img width=200px src="https://avatars.githubusercontent.com/u/101032270?v=4" alt=""/><br />
+      <sub><b>[FE] 이규호</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/lte1807">
+      <img width=200px src="https://avatars.githubusercontent.com/u/69644470?v=4" alt=""/><br />
+      <sub><b>[FE] 이태희</b></sub></a><br /></td>
+    </tr>
+  </tbody>
+</table>
+
+## 💁🏻‍♀️ 프로젝트 소개
+
+- TaskyTasky는 일상의 업무를 효율적으로 계획할 수 있는 웹사이트입니다.
+- 날짜와 시간에 따라 할 일을 간편하게 정리하고 일정을 효과적으로 관리하세요.
+- 칼럼을 이용해 할 일을 구분하고 카테고리로 정리할 수 있으며, 마감일, 태그, 사진 등을 이용해 다양하게 할 일을 기록할 수 있어요.
+
+## ⚙️ 기술스택
+
+**Front End**
+
+- React
+- TypeScript
+
+**React Used**
+
+- Next.js
+- styled-components
+- React query
+- zustand
+- mongoose
+- MongoDB
+- Axios
+
+## 🤲 협업 툴
+
+- Jira<br/>
+  ↳ 스케줄링, 진행상황 파악, 스프린트 관리
+- Notion<br/>
+  ↳ 협업 규칙(Git-Flow 전략, commit & PR & Merge 규칙, 코드 컨벤션), 회의록, 일일 회고 등 팀 활동 전반 기록
+- Discord<br/>
+  ↳ 공지 사항, 논의 내용에 대한 커뮤니케이션 및 PR/merge/Issue Github web hook 연결, 데일리 스크럼 진행
+- Github<br/>
+  - [레포지토리 바로가기](https://github.com/like-tenten/TaskyTasky)
+  - 브랜치 전략<br/>
+    ↳ Upstream: Main, Develop<br/>
+    ↳ Origin: Feat/_ , Fix/_ , Refactor/_ , Design/_ , Chore/\*
+- Figma<br/>
+  ↳ [발표 자료 바로가기](https://www.figma.com/file/Y9LXJAs82KvwuJSdMtauSm/TENTEN?type=design&node-id=0-1&mode=design&t=3qRNqT8FB9paAnnl-0)
+
+## quick start guide
+
+```jsx
+$ git clone https://github.com/like-tenten/tenten.git
+$ npm install
+$ npm build
+$ npm start
+
+https://localhost:3000 접속
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👥 역할 소개
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 송규경
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- UI
+  - 공통 컴포넌트: 모든 Modal 및 Modal Frame 구현, Modal 내 모든 컴포넌트
+  - 드롭다운, 다양한 Input 컴포넌트(날짜 선택 라이브러리, 태그 피커, 이미지 업로드 등), Textarea(텍스트 에디터)
+- 기능
+  - 모달 Portal 구현 및 모달 관리를 타입에 따른 상태로 구현 (Zustand store & slice)
+  - 모달에 들어가는 모든 기능 Inputs 구현 (React-Quill, React-datePicker, 직접 만든 tagPicker 등), 라이브러리의 css 디자인 변경
+  - boardId 페이지에서 카드 조회, 생성, 수정, 삭제 기능 구현
+  - 카드 모달에서 댓글 조회, 생성, 수정, 삭제 기능 구현 (댓글 무한스크롤 구현)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### 안유진
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- UI
+  - 공통 컴포넌트: Header, Card
+  - 페이지: 대시보드 페이지
+- 기능
+  - 대시보드 페이지 카드 및 컬럼 조회
+  - 대시보드페이지 컬럼 추가/수정/삭제 기능
+  - 대시보드페이지 컬럼별 무한스크롤
+  - 태그색 제공을 위한 MongoDB 연결 및 API 제공
 
-## Learn More
+### 안희원
 
-To learn more about Next.js, take a look at the following resources:
+- UI
+  - 공통 컴포넌트: Header, Button, Logo
+  - 페이지: 홈페이지, 마이보드 페이지, 계정관리 페이지, 404 페이지
+- 기능
+  - 헤더 영역 멤버 hover 시 닉네임 기능, 멤버 및 프로필 영역 드롭다운
+  - 새로운 대시보드 생성 및 chip 색상 커스텀 기능
+  - 대시보드 목록 페이지네이션
+  - 초대받은 대시보드 목록 무한스크롤
+  - 초대 수락, 거절 기능
+  - 프로필 정보 변경 및 비밀번호 변경 기능
+  - 로그인 성공, 초대 수락 및 거절 시 토스트 기능
+  - proxy 기능 이용하여 API 연결 함수 제공
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 이규호
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- UI
+  - 공통 컴포넌트: SideMenu, Chip, Input
+  - 페이지: 로그인 페이지, 회원가입 페이지
+- 기능
+  - 로그인 혹은 회원가입 실패 시 에러 메세지를, 성공 시 성공 메세지를 모달 형태로 제공
+  - 사이드 메뉴 무한스크롤
+  - 사이드 메뉴 모바일 버전에서 크기 조절 기능
+  - proxy 기능 이용하여 API 연결 함수 제공
 
-## Deploy on Vercel
+### 이태희
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- UI
+  - 초대받은 대시보드, 구성원, 초대내역
+  - 페이지: 대시보드 수정 페이지
+- 기능
+  - 대시보드 이름 및 색상 변경
+  - 구성원 삭제, 초대내역 취소, 대시보드 삭제
+  - 각각 모달형태로 제공하고 확인을 누르면 토스트 메시지
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🧩 프로젝트 구조 다이어그램
+
+![diagram](https://github.com/Ssong-Q/tenten/assets/122101706/61eaca2d-971a-4fa4-bef3-8454f65a262d)
+
+
+## 📄 페이지별 기능 & 스크린샷
+
+1. **홈페이지**
+
+<img width="1280" alt="homepage" src="https://github.com/Ssong-Q/tenten/assets/122101706/1c60f372-8b67-409d-a985-a50ff0b41ef3">
+
+   - 헤더에 로그인, 회원가입 바로가기를 눌러 로그인 또는 회원가입 페이지로 이동할 수 있습니다.
+   - 바로 시작하기 버튼을 눌러 로그인 페이지로 이동할 수 있습니다.
+
+2. **회원가입 페이지**
+
+<img width="1280" alt="signup" src="https://github.com/Ssong-Q/tenten/assets/122101706/23b6152c-6ec8-4747-bfe5-bfd6b9738cd1">
+
+   - 이메일, 닉네임, 비밀번호 양식에 맞춰서 회원가입을 할 수 있습니다.
+   - 모든 정보가 입력되어야 회원가입 버튼이 활성화됩니다.
+
+3. **로그인 페이지**
+
+<img width="1280" alt="login" src="https://github.com/Ssong-Q/tenten/assets/122101706/a2a5b3ae-3002-42fb-882f-f921882413b9">
+
+   - 존재하는 이메일과 알맞는 비밀번호를 입력하면 로그인이 되고 로그인 성공 시 myboard 페이지로 이동합니다.
+
+4. **마이보드 페이지**
+
+<img width="1280" alt="myboard" src="https://github.com/Ssong-Q/tenten/assets/122101706/6cfb69f7-2299-4568-8152-26b103b5b2c6">
+
+   - 사이드메뉴 또는 상단 영역을 통해 내가 만들었거나, 초대 받은 대시보드 목록을 조회할 수 있습니다.
+   - ‘새로운 대시보드+’ 버튼을 눌러 새로운 대시보드를 생성할 수 있습니다.
+   - 대시보드 초대 목록에서 키워드를 통해 대시보드를 검색할 수 있습니다.
+   - 대시보드 초대를 수락하거나 거절할 수 있습니다.
+
+5. **대시보드 페이지**
+
+<img width="1727" alt="dashboard" src="https://github.com/Ssong-Q/tenten/assets/122101706/b14eae31-f2a3-478a-b51f-16aba32dd0da">
+
+   - 우측 하단 ‘+’ 버튼을 눌러 새로운 컬럼(카테고리)을 생성할 수 있습니다.
+   - 컬럼의 ‘톱니바퀴’ 아이콘을 눌러 컬럼의 이름을 수정하거나 컬럼을 삭제할 수 있습니다.
+   - 컬럼 제목 하단의 ‘+’버튼을 눌러 해당 컬럼에 속하는 새로운 카드를 생성할 수 있습니다.
+     (카드 생성 모달에서 담당자/제목/설명/태그/마감일/이미지 를 지정할 수 있습니다.)
+   - ‘할 일 카드’를 클릭해 카드 상세 모달에서 할 일 카드의 내용과 카드에 달린 댓글을 확인하고 댓글을 입력할 수 있습니다.
+   - ‘할 일 카드 상세 모달의 케밥버튼’을 눌러 할 일 카드의 컬럼(카테고리)/담당자/제목/내용/태그/마감일 등을 수정하거나 할 일 카드를 삭제할 수 있습니다.
+   - 상단 << 또는 >> 버튼을 눌러 맨 앞 컬럼 또는 맨 뒤 컬럼으로 바로 이동할 수 있습니다.
+     (태블릿, 모바일일 때는 맨 위, 맨 아래 컬럼 이동)
+
+6. **할일 카드 모달**
+
+https://github.com/Ssong-Q/tenten/assets/122101706/7f471f63-990c-45fa-8c3e-34ab17ddace0
+
+  - 닫기 버튼 옆의 kebab 버튼을 누를 시,'수정하기'와 '삭제하기' 버튼의 드롭다운이 활성화됩니다.
+  - '수정하기' 버튼을 누를 경우, 할일 수정 모달이 마운트되며, 해당 할일 카드의 정보(컬럼/담당자/제목/설명/태그/마감일/이미지)를 수정할 수 있습니다.
+  - '삭제하기' 버튼을 누를 경우, 현재 마운트 되어있는 해당 할일 카드가 삭제됩니다.
+  - 댓글을 조회할 수 있고, 생성, 삭제, 수정할 수 있습니다. 댓글 입력 시 텍스트 에디터를 이용할 수 있습니다.
+  - 댓글 창의 우측 하단 화살표를 누르면 댓글 창 최상단으로 이동할 수 있습니다.
+
+
+7. **대시보드 수정 페이지**
+
+<img width="1280" alt="dashboardEdit" src="https://github.com/Ssong-Q/tenten/assets/122101706/af8e32cf-5fe3-4339-8a61-2130820813dd">
+
+   - 대시보드 이름 및 컬러 변경을 할 수 있습니다.
+   - 구성원 삭제를 할 수 있습니다.
+   - 초대 목록을 취소할 수 있습니다.
+   - 초대목록이 비어있을 경우 비어 있다는 이미지를 보여줍니다.
+
+8. **계정 관리 페이지**
+
+<img width="1728" alt="account" src="https://github.com/Ssong-Q/tenten/assets/122101706/2b0ff147-f4d7-4eae-9f0c-dbd5175fed1a">
+
+   - 헤더의 프로필 영역을 눌렀을 때 뜨는 드롭다운 → “내 정보” 버튼을 통해 들어올 수 있습니다.
+   - 프로필 영역에서 프로필 사진이나 닉네임 중 변경된 정보가 하나라도 있어야 ‘저장’ 버튼이 활성화됩니다.
+   - 비밀번호 변경 영역에서 어떠한 input 영역에서도 에러가 발생하지 않고, 세 input 영역이 모두 채워져 있는 경우 ‘변경’ 버튼이 활성화됩니다.
+
+9. **404 페이지**
+
+<img width="1280" alt="notFound" src="https://github.com/Ssong-Q/tenten/assets/122101706/4362ca96-35a6-4a4d-926a-c7e46b2f2bee">
+
+   - 존재하지 않는 url로 접근했을 경우 보여집니다.
+   - 로그인을 하지 않은 채, 회원 전용 페이지(내 대시보드, 대시보드 페이지, 대시보드 수정 페이지)에 url로 접근했을 경우 보여집니다.
+
+## 프로젝트 후기
+
+### 🥸 송규경
+
+> 좋은 팀을 만나 스스로 성장도 하고 팀원분들로부터 여러 방면에서 많이 배울 수 있어 참 좋았습니다. 우선, 우리 프로젝트를 위해서 마지막까지 QA, PPT, 배포, 회고 등에 힘써준 모든 팀원들에게 먼저 감사하다고 말씀 드리고 싶네요. 그대들의 열정에 박수를 👏🏻 우리 모두가 이 프로젝트로 인해서 한번쯤 구현하고 싶었던 기능, 써보고 싶었던 기술과 코드를 적용해볼 수 있는 기회였길 바라봅니다. 처음 계획한 모든 추가기능 중 일부는 구현을 하지 못했지만, 저는 우리 프로젝트가 너무 뿌듯하고 직접 서비스를 이용하고 싶을 정도로 자랑스럽네요. 마무리 회식에서의 얼그레이 하이볼과 인생네컷까지 완벽(?)했습니다! 영화 ‘우리들의 행복한 시간’ 아시나요? 우리가 정기적으로 만났던 매주 화요일 오후 1시가 앞으로도 그리울 것 같네요😊 마지막으로, 지혜롭고 유연하게, 묵묵히 팀을 이끌어준 팀장님도 참 고생 많았다고 말씀드리고 싶네요~ 역쉬 성장에는 텐텐이 최고야 나는야 모달 마스터 텐텐 포에버❣
+
+### 🤥 안유진
+
+> 텐텐과 함께 이 프로젝트를 완성할 수 있어서 저에게는 정말 소중한 배움의 기회가 많았어요. 열정과 인성면으로도, 기술적으로도, 다방면으로 여러분들 덕에 함께 성장했다고 느껴요. 여러분과 협업하면서 타인의 코드를 읽고 타인을 위해 코드를 구성하게 되는 여러 노력을 해볼 수 있었던 소중한 계기가 되었고 앞으로도 여러분께 배우고 영감을 받은 여러가지를 적용해 볼 마음에 벌써 설레입니다. 여러분들께 앞으로도 쭉 함께하고싶은 동료이자 개발자로 남고싶은 마음이 더 커졌습니다!! 보고싶을때마다 코드리뷰 리뷰어 걸게요??>v< 함께 고생하고 성장하는 즐거움을 알게 해주신 우리 텐텐 정말 많이 감사하고 고생많으셨습니다! 우리팀과 그 결과물 최고 멋지고 자랑스러워😆!!!!
+
+### 🤪 안희원
+
+> 텐텐이라는 팀으로 만나 하나의 프로젝트를 성공적으로 마무리할 수 있게 돼서 너무 기쁘네요! 저는 개인적으로 이번 프로젝트를 통해 많이 성장한 것 같습니다. 어떻게 해야 팀원들이 내 코드를 쉽게 읽을 수 있을지, 내 컴포넌트를 쉽게 사용할 수 있을 지에 대해 어느 때보다 많이 고민한 것 같아요. 또, 이 코드를 커스텀훅으로 만들면 다른 팀원들도 쓸 수 있겠지라고 생각하는 저를 보며 프로젝트를 시작하며 적었던 목표인 “제 코드의 주관 찾기”를 어느 정도 이룬 것 같기도 합니다. 제가 의견을 낼 때마다 거절하지 않고 함께 고민해주는 팀원들이 있어 행복하게 프로젝트를 진행할 수 있었습니다. 좋은 팀원들과 함께 했기에 많은 도전을 해볼 수 있었고, 항상 팀원들에게 도움이 되는 팀장이자 팀원이 될 수 있도록 노력했던 것 같습니다. 덕분에 여러 면으로 성장했네요. 비록 TaskyTasky는 끝났지만 우리의 인연은 계속 되길..🩷 너무 즐거웠던 프로젝트였습니다!
+
+### 😈 이규호
+
+> 우선 프로젝트를 하면서 정말 재밌었습니다!! 특히 장난을 쳐도 다들 재밌게 받아주셔서 너무 감사했어요..! 이번 팀원들 덕분에 코드 짜는 실력도 늘게 된 것 같고 같이 하는 즐거움에 대해서 더 잘 알게 된 것 같습니다. 특히 이번 프로젝트를 하면서 기록하는 습관이 정말 중요하다는 것을 알게 되었는데 이게 정말 힘들고 귀찮은 일일 텐데 팀장님이 매일 기록해 주셔서 정말 감사했습니다. 저도 그 덕분에 매일매일 무엇을 했는지 기록을 해보려고 합니다. 다 함께 다음 프로젝트도 같이 하고 싶지만 팀이 바뀌어서 정말 아쉽네요 🥲그래도 저희 프로젝트는 리팩토링도 하고 추가 기능도 더 넣어봐요!! 이미 결과물이 엄청 멋지지만 더 엄청나게 해봐요~.~ 정말 다들 재밌었어요~!!
+
+### 👸 이태희
+
+> 우선 프로젝트 기간 동안 모두들 정말 고생많이 하셨습니다 짝짝짝~!! 텐텐이라는 팀에 들어와 다양한 팀원분들 을 경험했고 정말 열정이 가득하신 팀원분들을 만나고 실력이 좋으신분들과 함께 해서 자극도 많이 됐고 정말 많이 배웠습니다 그래서 결과물도 이쁘게 나왔다고 생각합니다~~:)앞으로도 텐텐에서 했던 것들을 많이 써먹어 볼 수 있을 것 같아요 정말 감사했습니다~ 팀원분들 모두 따봉하나드릴게요 와따👍!
+> 아놔 독감쉣… 결론은 손을 잘씻자..
